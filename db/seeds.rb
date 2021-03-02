@@ -17,7 +17,7 @@
 # Recipe => cost_per_serving
 
 # Ingredient.delete_all
-# Consumable.delete_all
+# Supply.delete_all
 # Recipe.delete_all
 # Pantry.delete_all
 # User.delete_all
@@ -75,15 +75,6 @@ FOOD = [
 ]
 
 FOOD.each {|item| Consumable.create(item)}
-
-
-# User.create(name: "Mr Bojangles")
-# User.create(name: "Cat in the Hat")
-# User.create(name: "Willie Nelson")
-
-# Pantry.create(user_id: 1)
-# Pantry.create(user_id: 2)
-# Pantry.create(user_id: 3)
 
 # Recipe.create(title: "Meatloaf", user_id: 1)
 # Recipe.create(title: "Roast Chicken", user_id: 1)

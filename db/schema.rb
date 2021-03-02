@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_222217) do
+ActiveRecord::Schema.define(version: 2021_03_02_231432) do
 
   create_table "consumables", force: :cascade do |t|
     t.string "type"
     t.string "name"
-    t.float "cost"
     t.string "unit"
     t.float "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cost_per_unit"
   end
 
   create_table "ingredients", force: :cascade do |t|
