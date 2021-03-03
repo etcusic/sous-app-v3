@@ -1,3 +1,0 @@
-class Supply < Consumable
-  
-end

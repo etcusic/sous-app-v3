@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_145818) do
+ActiveRecord::Schema.define(version: 2021_03_03_152932) do
 
   create_table "consumables", force: :cascade do |t|
-    t.string "type"
     t.string "name"
     t.string "unit"
     t.float "quantity"
@@ -26,11 +25,13 @@ ActiveRecord::Schema.define(version: 2021_03_03_145818) do
 
   create_table "ingredients", force: :cascade do |t|
     t.integer "recipe_id", null: false
-    t.integer "supply_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "unit"
+    t.float "quantity"
+    t.float "cost_per_unit"
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
-    t.index ["supply_id"], name: "index_ingredients_on_supply_id"
   end
 
   create_table "pantries", force: :cascade do |t|
