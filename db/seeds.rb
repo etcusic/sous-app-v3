@@ -28,77 +28,68 @@ User.create(name: "Willie Nelson")
 
 Pantry.create(user_id: 1)
 Pantry.create(user_id: 2)
-Pantry.create(user_id: 3)_per_unit
+Pantry.create(user_id: 3)
 
 # ALL OF THESE PRICES NEED TO BE REASSESSED
 FOOD = [
-    {id: 1, pantry_id: 1, name: 'brown rice', cost_per_unit: 0.06, unit: 'oz', quantity: 1},
-    {id: 2, pantry_id: 1, name: 'quinoa', cost_per_unit: 0.15, unit: 'oz', quantity: 1},
-    {id: 3, pantry_id: 1, name: 'bread', cost_per_unit: 0.13, unit: 'pcs', quantity: 1},
-    {id: 4, pantry_id: 1, name: 'corn tortilla', cost_per_unit: 0.08, unit: 'pcs', quantity: 1},
-    {id: 5, pantry_id: 1, name: 'ground turkey', cost_per_unit: 0.19, unit: 'oz', quantity: 1},
-    {id: 6, pantry_id: 1, name: 'chicken', cost_per_unit: 0.13, unit: 'oz', quantity: 1},
-    {id: 7, pantry_id: 1, name: 'feta', cost_per_unit: 0.3, unit: 'oz', quantity: 1},
-    {id: 8, pantry_id: 1, name: 'egg', cost_per_unit: 0.27, unit: 'pcs', quantity: 1},
-    {id: 9, pantry_id: 1, name: 'corn', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
-    {id: 10, pantry_id: 1, name: 'lime', cost_per_unit: 0.5, unit: 'pcs', quantity: 1},
-    {id: 11, pantry_id: 1, name: 'zucchini', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
-    {id: 12, pantry_id: 1, name: 'jalapeno pepper', cost_per_unit: 0.07, unit: 'oz', quantity: 1},
-    {id: 13, pantry_id: 1, name: 'shredded carrot', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
-    {id: 14, pantry_id: 1, name: 'mushroom', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
-    {id: 15, pantry_id: 1, name: 'yellow bell pepper', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 16, pantry_id: 1, name: 'green bell pepper', cost_per_unit: 0.7, unit: 'pcs', quantity: 1},
-    {id: 17, pantry_id: 1, name: 'red bell pepper', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 18, pantry_id: 1, name: 'yellow onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 19, pantry_id: 1, name: 'red onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 20, pantry_id: 1, name: 'garlic', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 21, pantry_id: 1, name: 'green onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 22, pantry_id: 1, name: 'cilantro', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 23, pantry_id: 1, name: 'cabbage', cost_per_unit: 0.04, unit: 'oz', quantity: 1},
-    {id: 24, pantry_id: 1, name: 'canned tomato', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {id: 25, pantry_id: 1, name: 'cashew', cost_per_unit: 0.1, unit: 'oz', quantity: 1}
-    {id: 26, pantry_id: 1, name: 'sliced turkey', cost_per_unit: .1, unit: 'oz', quantity: 1},
-    {id: 27, pantry_id: 1, name: 'sliced cheddar', cost_per_unit: .1, unit: 'oz', quantity: 1}
-    # {id: 28, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 29, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 30, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 31, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 32, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 33, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 34, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 35, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 36, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 37, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 38, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 39, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1},
-    # {id: 40, pantry_id: 1, name: '', cost: .1, unit: 'oz', quantity: 1}
+    {name: 'brown rice', cost_per_unit: 0.06, unit: 'oz', quantity: 1},
+    {name: 'quinoa', cost_per_unit: 0.15, unit: 'oz', quantity: 1},
+    {name: 'bread', cost_per_unit: 0.13, unit: 'pcs', quantity: 1},
+    {name: 'corn tortilla', cost_per_unit: 0.08, unit: 'pcs', quantity: 1},
+    {name: 'ground turkey', cost_per_unit: 0.19, unit: 'oz', quantity: 1},
+    {name: 'chicken', cost_per_unit: 0.13, unit: 'oz', quantity: 1},
+    {name: 'feta', cost_per_unit: 0.3, unit: 'oz', quantity: 1},
+    {name: 'egg', cost_per_unit: 0.27, unit: 'pcs', quantity: 1},
+    {name: 'corn', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
+    {name: 'lime', cost_per_unit: 0.5, unit: 'pcs', quantity: 1},
+    {name: 'zucchini', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
+    {name: 'jalapeno pepper', cost_per_unit: 0.07, unit: 'oz', quantity: 1},
+    {name: 'shredded carrot', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
+    {name: 'mushroom', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
+    {name: 'yellow bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: 1},
+    {name: 'green bell pepper', cost_per_unit: 0.7, unit: 'pcs', quantity: 1},
+    {name: 'red bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: 1},
+    {name: 'yellow onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'red onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'garlic', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'green onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'cilantro', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'cabbage', cost_per_unit: 0.04, unit: 'oz', quantity: 1},
+    {name: 'canned tomato', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'cashew', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'sliced turkey', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'sliced cheddar', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'pasta', cost: 0.1, unit: 'oz', quantity: 1},
+    {name: 'spinach', cost: 0.1, unit: 'oz', quantity: 1}
 ]
 
-FOOD.each {|item| Supply.create(item)}
-
-Recipe.create(id: 1, user_id: 1, name: "Meatloaf", portions: 4, instructions: "")
-Recipe.create(id: 2, user_id: 1, name: "Stir Fry", portions: 4, instructions: "")
-Recipe.create(id: 3, user_id: 2, name: "Stir Fry", portions: 4, instructions: "")
-Recipe.create(id: 4, user_id: 2, name: "Roast Chicken", portions: 4, instructions: "")
-Recipe.create(id: 5, user_id: 3, name: "Spaghetti", portions: 4, instructions: "")
-Recipe.create(id: 6, user_id: 3, name: "Bug Juice", portions: 4, instructions: "")
-
-def add_ingredients(recipe_id, supply_id, x)
-    supply = Supply.find_by_id(supply_id)
-    ing = Ingredient.create(recipe_id: recipe_id, supply_id: supply_id, name: supply.name, cost_per_serving: supply.cost_per_serving, unit: supply.unit, quantity: x)
+3.times do |i|
+        binding.pry
+        pantry = User.find_by_id(i + 1).pantry
+    FOOD.each do |item| 
+        item[:type] = Supply
+        supply = pantry.supplies.build(item)
+        supply = supply.save
+    end
 end
 
-# RecipeIngredient.create(name: "beef", ingredient_id: 1, recipe_id: 1)
-# RecipeIngredient.create(name: "onion", ingredient_id: 4, recipe_id: 1)
-# RecipeIngredient.create(name: "chicken", ingredient_id: 2, recipe_id: 2)
-# RecipeIngredient.create(name: "carrots", ingredient_id: 3, recipe_id: 2)
-# RecipeIngredient.create(name: "mushrooms", ingredient_id: 5, recipe_id: 3)
-# RecipeIngredient.create(name: "onion", ingredient_id: 4, recipe_id: 3)
-# RecipeIngredient.create(name: "carrots", ingredient_id: 3, recipe_id: 3)
-# RecipeIngredient.create(name: "spaghetti", ingredient_id: 7, recipe_id: 4)
-# RecipeIngredient.create(name: "tomato sauce", ingredient_id: 8, recipe_id: 4)
-# RecipeIngredient.create(name: "mushrooms", ingredient_id: 5, recipe_id: 4)
-# RecipeIngredient.create(name: "bugs", ingredient_id: 9, recipe_id: 5)
-# RecipeIngredient.create(name: "juice", ingredient_id: 10, recipe_id: 5)
-# RecipeIngredient.create(name: "pixies", ingredient_id: 11, recipe_id: 6)
-# RecipeIngredient.create(name: "farts", ingredient_id: 12, recipe_id: 6)
+
+Recipe.create(id: 1, user_id: 1, name: "Garlic Chicken", portions: 4, instructions: "")
+Recipe.create(id: 2, user_id: 1, name: "Cashew Chicken", portions: 4, instructions: "")
+Recipe.create(id: 3, user_id: 2, name: "Mushroom Chicken", portions: 4, instructions: "")
+Recipe.create(id: 4, user_id: 2, name: "Turkey Spaghetti", portions: 4, instructions: "")
+Recipe.create(id: 5, user_id: 3, name: "Turkey Tacos", portions: 4, instructions: "")
+Recipe.create(id: 6, user_id: 3, name: "Chicken Salad", portions: 4, instructions: "")
+
+# def add_ingredients(recipe_id, supply_ids)
+#     supply_ids.map{|supply| Supply.find_by_id(supply.id)} .for_each do |sup|
+#         Ingredient.create(recipe_id: recipe_id, supply_id: sup.id, name: sup.name, cost_per_serving: sup.cost_per_serving, unit: sup.unit, quantity: rand(1..20))
+#     end
+# end
+
+# add_ingredients(1, [1, 6, 20, 16, 14, 13])
+# add_ingredients(2, [1, 6, 25, 21, 13, 14])
+# add_ingredients(3, [1, 6, 14, 11, 19])
+# add_ingredients(4, [28, 5, 24, 14, 18])
+# add_ingredients(5, [5, 4, 12, 18, 10])
+# add_ingredients(6, [6, 29, 7, 13, 19, 21])
