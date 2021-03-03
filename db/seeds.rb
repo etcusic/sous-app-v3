@@ -66,7 +66,7 @@ FOOD = [
 3.times do |i|
     pantry = Pantry.find_by_id(i + 1)
     FOOD.each do |item| 
-        new_item = pantry.consumables.build(item).save
+        pantry.consumables.build(item).save
     end
 end
 
@@ -79,10 +79,10 @@ Recipe.create(id: 5, user_id: 1, name: "Turkey Tacos", portions: 4, instructions
 Recipe.create(id: 6, user_id: 1, name: "Chicken Salad", portions: 4, instructions: "")
 
 def add_ingredients(recipe_id, supply_ids)
+    recipe = Recipe.find_by_id(recipe_id)
     supply_ids.map{|id| Consumable.find_by_id(id)} .each do |sup|
         # ing = Ingredient.new(recipe_id: recipe_id, name: sup.name, cost_per_unit: sup.cost_per_unit, unit: sup.unit, quantity: rand(1..20))
-        ing = Recipe.find_by_id(recipe_id).ingredients.build({name: sup.name, cost_per_unit: sup.cost_per_unit, unit: sup.unit, quantity: rand(1..20)})
-        binding.pry
+        recipe.ingredients.build({name: sup.name, cost_per_unit: sup.cost_per_unit, unit: sup.unit, quantity: rand(1..20)}).save
     end
 end
 

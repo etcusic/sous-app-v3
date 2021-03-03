@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_152932) do
+ActiveRecord::Schema.define(version: 2021_03_03_153645) do
 
   create_table "consumables", force: :cascade do |t|
     t.string "name"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_152932) do
     t.float "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "cost_per_unit"
+    t.float "cost_per_unit"
     t.integer "pantry_id"
     t.index ["pantry_id"], name: "index_consumables_on_pantry_id"
   end
