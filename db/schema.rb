@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_231432) do
+ActiveRecord::Schema.define(version: 2021_03_03_145818) do
 
   create_table "consumables", force: :cascade do |t|
     t.string "type"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_231432) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "cost_per_unit"
+    t.integer "pantry_id"
+    t.index ["pantry_id"], name: "index_consumables_on_pantry_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -48,21 +50,14 @@ ActiveRecord::Schema.define(version: 2021_03_02_231432) do
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
-  create_table "supplies", force: :cascade do |t|
-    t.integer "pantry_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["pantry_id"], name: "index_supplies_on_pantry_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "consumables", "pantries"
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "pantries", "users"
   add_foreign_key "recipes", "users"
-  add_foreign_key "supplies", "pantries"
 end

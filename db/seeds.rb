@@ -59,17 +59,15 @@ FOOD = [
     {name: 'cashew', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
     {name: 'sliced turkey', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
     {name: 'sliced cheddar', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'pasta', cost: 0.1, unit: 'oz', quantity: 1},
-    {name: 'spinach', cost: 0.1, unit: 'oz', quantity: 1}
+    {name: 'pasta', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
+    {name: 'spinach', cost_per_unit: 0.1, unit: 'oz', quantity: 1}
 ]
 
 3.times do |i|
-        binding.pry
-        pantry = User.find_by_id(i + 1).pantry
     FOOD.each do |item| 
-        item[:type] = Supply
-        supply = pantry.supplies.build(item)
-        supply = supply.save
+        new_item = Consumable.create(item)
+        new_item.type = Supply
+        binding.pry
     end
 end
 
