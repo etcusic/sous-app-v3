@@ -1,1 +1,17 @@
-<h1><%= @user.name %></h1>
+<h1><%= @pantry.user.name %>'s Pantry</h1>
+
+<h2>Supplies:</h2>
+<table>
+    <tr>
+        <th>Ingredient: </th>
+        <th>Quantity: </th>
+        <th>Cost per unit: </th>
+    </tr>
+    <% @pantry.ingredients.each do |ingredient| %>
+        <tr>
+            <td><%= ingredient.name %></td>
+            <td>- <%= ingredient.quantity %> <%= ingredient.unit %></td>
+            <td>- $<%= ingredient.cost_per_unit %> per <%= ingredient.unit %></td>
+        </tr>
+    <% end %>
+</table>
