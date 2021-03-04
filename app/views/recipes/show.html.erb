@@ -1,3 +1,12 @@
 <h1><%= @recipe.user.name %></h1>
 
-<h2><%= @recipe.name %></h2>
+<h2><%= @recipe.name %> | <%= @recipe.portions %> servings | total cost: $<%= @recipe.total_cost %></h2>
+
+<ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %> | <%= ingredient.quantity %> <%= ingredient.unit %> | at <%= ingredient.cost_per_unit %> per <%= ingredient.unit %></li>
+    <% end %>
+</ul>
+
+<h3>Instructions</h3>
+<p><%= @recipe.instructions %></p>
