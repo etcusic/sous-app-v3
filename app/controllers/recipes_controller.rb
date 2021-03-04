@@ -6,8 +6,7 @@ class RecipesController < ApplicationController
     end
 
     def new
-        # binding.pry
-        @recipe = Recipe.new
+        @recipe = User.find_by_id(recipe_params[:user_id]).recipes.build
     end
 
     def create
@@ -15,13 +14,13 @@ class RecipesController < ApplicationController
     end
 
     def show
-        @recipe = Recipe.find_by_id(recipe_params)
+        @recipe = Recipe.find_by_id(recipe_params[:id])
     end
 
     private
 
     def recipe_params
-        params.require(:id, :user_id)
+        params.permit(:id, :user_id)
     end
 
 end

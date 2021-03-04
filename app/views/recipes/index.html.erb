@@ -1,4 +1,4 @@
-<h1><%= @recipes.first.user.name %></h1>
+<h1><%= link_to @recipes.first.user.name, user_path(@recipes.first.user) %></h1>
 
 <ul>
     <% @recipes.each do |recipe| %>
