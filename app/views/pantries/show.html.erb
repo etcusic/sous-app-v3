@@ -17,3 +17,10 @@
 </table>
 
 <h3>Raw cost estimate: $<%= @pantry.total_cost %></h3>
+
+<h3>Recipes available based on pantry contents: </h3>
+<ul>
+    <% @pantry.available_recipes.each do |recipe| %>
+        <li><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %></li>
+    <% end %>
+</ul>
