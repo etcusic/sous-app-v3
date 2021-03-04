@@ -2,6 +2,8 @@
 
 <h2><%= @recipe.name %> | <%= @recipe.portions %> servings | total cost: $<%= @recipe.total_cost %></h2>
 
+<%= @recipe.enough_in_pantry? %><br><br>
+
 <table>
     <tr>
         <th>Ingredient: </th>
