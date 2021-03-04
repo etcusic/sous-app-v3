@@ -29,35 +29,35 @@ Pantry.create(user_id: 3)
 
 # ALL OF THESE PRICES NEED TO BE REASSESSED
 FOOD = [
-    {name: 'brown rice', cost_per_unit: 0.06, unit: 'oz', quantity: 1},
-    {name: 'quinoa', cost_per_unit: 0.15, unit: 'oz', quantity: 1},
-    {name: 'bread', cost_per_unit: 0.13, unit: 'pcs', quantity: 1},
-    {name: 'corn tortilla', cost_per_unit: 0.08, unit: 'pcs', quantity: 1},
-    {name: 'ground turkey', cost_per_unit: 0.19, unit: 'oz', quantity: 1},
-    {name: 'chicken', cost_per_unit: 0.13, unit: 'oz', quantity: 1},
-    {name: 'feta', cost_per_unit: 0.3, unit: 'oz', quantity: 1},
-    {name: 'egg', cost_per_unit: 0.27, unit: 'pcs', quantity: 1},
-    {name: 'corn', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
-    {name: 'lime', cost_per_unit: 0.5, unit: 'pcs', quantity: 1},
-    {name: 'zucchini', cost_per_unit: 0.09, unit: 'oz', quantity: 1},
-    {name: 'jalapeno pepper', cost_per_unit: 0.07, unit: 'oz', quantity: 1},
-    {name: 'shredded carrot', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
-    {name: 'mushroom', cost_per_unit: 0.18, unit: 'oz', quantity: 1},
-    {name: 'yellow bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: 1},
-    {name: 'green bell pepper', cost_per_unit: 0.7, unit: 'pcs', quantity: 1},
-    {name: 'red bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: 1},
-    {name: 'yellow onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'red onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'garlic', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'green onion', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'cilantro', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'cabbage', cost_per_unit: 0.04, unit: 'oz', quantity: 1},
-    {name: 'canned tomato', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'cashew', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'sliced turkey', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'sliced cheddar', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'pasta', cost_per_unit: 0.1, unit: 'oz', quantity: 1},
-    {name: 'spinach', cost_per_unit: 0.1, unit: 'oz', quantity: 1}
+    {name: 'brown rice', cost_per_unit: 0.06, unit: 'oz', quantity: rand(2..80)},
+    {name: 'quinoa', cost_per_unit: 0.15, unit: 'oz', quantity: rand(2..80)},
+    {name: 'bread', cost_per_unit: 0.13, unit: 'pcs', quantity: rand(2..80)},
+    {name: 'corn tortilla', cost_per_unit: 0.08, unit: 'pcs', quantity: rand(2..80)},
+    {name: 'ground turkey', cost_per_unit: 0.19, unit: 'oz', quantity: rand(2..80)},
+    {name: 'chicken', cost_per_unit: 0.13, unit: 'oz', quantity: rand(2..80)},
+    {name: 'feta', cost_per_unit: 0.3, unit: 'oz', quantity: rand(2..80)},
+    {name: 'egg', cost_per_unit: 0.27, unit: 'pcs', quantity: rand(2..80)},
+    {name: 'corn', cost_per_unit: 0.09, unit: 'oz', quantity: rand(2..80)},
+    {name: 'lime', cost_per_unit: 0.5, unit: 'pcs', quantity: rand(2..80)},
+    {name: 'zucchini', cost_per_unit: 0.09, unit: 'oz', quantity: rand(2..80)},
+    {name: 'jalapeno pepper', cost_per_unit: 0.07, unit: 'oz', quantity: rand(2..80)},
+    {name: 'shredded carrot', cost_per_unit: 0.18, unit: 'oz', quantity: rand(2..80)},
+    {name: 'mushroom', cost_per_unit: 0.18, unit: 'oz', quantity: rand(2..80)},
+    {name: 'yellow bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: rand(2..80)},
+    {name: 'green bell pepper', cost_per_unit: 0.7, unit: 'pcs', quantity: rand(2..80)},
+    {name: 'red bell pepper', cost_per_unit: 0.9, unit: 'oz', quantity: rand(2..80)},
+    {name: 'yellow onion', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'red onion', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'garlic', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'green onion', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'cilantro', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'cabbage', cost_per_unit: 0.04, unit: 'oz', quantity: rand(2..80)},
+    {name: 'canned tomato', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'cashew', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'sliced turkey', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'sliced cheddar', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'pasta', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)},
+    {name: 'spinach', cost_per_unit: 0.1, unit: 'oz', quantity: rand(2..80)}
 ]
 
 3.times do |i|
@@ -68,12 +68,12 @@ FOOD = [
 end
 
 
-Recipe.create(user_id: 1, name: "Garlic Chicken", portions: 4, instructions: "")
-Recipe.create(user_id: 1, name: "Cashew Chicken", portions: 4, instructions: "")
-Recipe.create(user_id: 1, name: "Mushroom Chicken", portions: 4, instructions: "")
-Recipe.create(user_id: 1, name: "Turkey Spaghetti", portions: 4, instructions: "")
-Recipe.create(user_id: 1, name: "Turkey Tacos", portions: 4, instructions: "")
-Recipe.create(user_id: 1, name: "Chicken Salad", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Garlic Chicken", portions: 4, instructions: "Cook rice, cut veggies, sautee all the things")
+Recipe.create(user_id: 1, name: "Cashew Chicken", portions: 4, instructions: "Cook rice, cut veggies, do a voodoo chant, sautee and add sauce")
+Recipe.create(user_id: 1, name: "Mushroom Chicken", portions: 4, instructions: "Cook all the things")
+Recipe.create(user_id: 1, name: "Turkey Spaghetti", portions: 4, instructions: "Boil pasta, cook the things, add sauce, injest carbies")
+Recipe.create(user_id: 1, name: "Turkey Tacos", portions: 4, instructions: "Butter dem tortillas, cook meat, sprinkle lime juice, eat and be happy")
+Recipe.create(user_id: 1, name: "Chicken Salad", portions: 4, instructions: "Veggies in bowl, chicken on top")
 
 def add_ingredients(recipe_id, supply_ids)
     recipe = Recipe.find_by_id(recipe_id)
