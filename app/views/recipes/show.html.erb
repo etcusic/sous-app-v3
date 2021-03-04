@@ -1,4 +1,4 @@
-<h1><%= @recipe.user.name %></h1>
+<h1><%= link_to @recipe.user.name, user_path(@recipe.user) %></h1>
 
 <h2><%= @recipe.name %> | <%= @recipe.portions %> servings | total cost: $<%= @recipe.total_cost %></h2>
 

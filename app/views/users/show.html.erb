@@ -1,3 +1,5 @@
 <h1><%= @user.name %></h1>
 
 <h2><%= link_to "Pantry", user_pantry_path(@user, @user.pantry) %>  |  <%= link_to "Recipes", user_recipes_path(@user, @user.recipes) %></h2>
+
+<p><%= link_to "+ CREATE NEW RECIPE +", new_user_recipe_path(@user) %></p>

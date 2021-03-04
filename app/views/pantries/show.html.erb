@@ -1,4 +1,4 @@
-<h1><%= @pantry.user.name %>'s Pantry</h1>
+<h1><%= link_to @pantry.user.name, user_path(@pantry.user) %>'s Pantry</h1>
 
 <h2>Supplies:</h2>
 <table>
