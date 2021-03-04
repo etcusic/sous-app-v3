@@ -2,11 +2,20 @@
 
 <h2><%= @recipe.name %> | <%= @recipe.portions %> servings | total cost: $<%= @recipe.total_cost %></h2>
 
-<ul>
+<table>
+    <tr>
+        <th>Ingredient: </th>
+        <th>Quantity: </th>
+        <th>Cost per unit: </th>
+    </tr>
     <% @recipe.ingredients.each do |ingredient| %>
-        <li><%= ingredient.name %> | <%= ingredient.quantity %> <%= ingredient.unit %> | at <%= ingredient.cost_per_unit %> per <%= ingredient.unit %></li>
+        <tr>
+            <td><%= ingredient.name %></td>
+            <td>- <%= ingredient.quantity %> <%= ingredient.unit %></td>
+            <td>- $<%= ingredient.cost_per_unit %> per <%= ingredient.unit %></td>
+        </tr>
     <% end %>
-</ul>
+</table>
 
 <h3>Instructions</h3>
 <p><%= @recipe.instructions %></p>
