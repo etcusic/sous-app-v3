@@ -1,34 +1,31 @@
 # rails g resource User name:string
 # rails g resource Pantry user:belongs_to 
 # rails g resource Recipe user:belongs_to name:string portions:integer instructions:text 
-# rails g resource Consumable type:string name:string cost:float unit:string quantity:float 
-# rails g resource Supply pantry:belongs_to
-# rails g resource Ingredient recipe:belongs_to supply:belongs_to 
+# rails g resource Consumable pantry:belongs_to type:string name:string cost_per_unit:float unit:string quantity:float 
+# rails g resource Ingredient recipe:belongs_to type:string name:string cost_per_unit:float unit:string quantity:float
 
 # relationships => User has_many :recipes, has_one :pantry | Pantry has_many :supplies | Recipe has_many :ingredients | Supply has_many :ingredients
 
 # next step:
 # rails g resource FoodOrder => user:belongs_to => contains an array constant of Recipes with corresponding amount - should I make a separate Recipe model to belong_to FoodOrder???
 
+# $$$ A recipe (for something like a sauce) needs to be an Ingredient in a recipe as well
+
 # other model considerations: Category, UnitOfMeasurement, Quantity
 
 # methods to add in models:
-# Pantry => inventory = self.supplies
+# Pantry => available_recipes = self.user.recipes.select => where recipe.each_ingredient < pantry.equivalent_ingredient
 # Recipe => cost_per_serving
 
-Ingredient.delete_all
-Consumable.delete_all
-Recipe.delete_all
-Pantry.delete_all
-User.delete_all
+# rails db:reset
 
-User.create(id: 1, name: "Mr Bojangles")
-User.create(id: 2, name: "Cat in the Hat")
-User.create(id: 3, name: "Willie Nelson")
+User.create(name: "Mr Bojangles")
+User.create(name: "Cat in the Hat")
+User.create(name: "Willie Nelson")
 
-Pantry.create(id: 1, user_id: 1)
-Pantry.create(id: 2, user_id: 2)
-Pantry.create(id: 3, user_id: 3)
+Pantry.create(user_id: 1)
+Pantry.create(user_id: 2)
+Pantry.create(user_id: 3)
 
 # ALL OF THESE PRICES NEED TO BE REASSESSED
 FOOD = [
@@ -71,17 +68,16 @@ FOOD = [
 end
 
 
-Recipe.create(id: 1, user_id: 1, name: "Garlic Chicken", portions: 4, instructions: "")
-Recipe.create(id: 2, user_id: 1, name: "Cashew Chicken", portions: 4, instructions: "")
-Recipe.create(id: 3, user_id: 1, name: "Mushroom Chicken", portions: 4, instructions: "")
-Recipe.create(id: 4, user_id: 1, name: "Turkey Spaghetti", portions: 4, instructions: "")
-Recipe.create(id: 5, user_id: 1, name: "Turkey Tacos", portions: 4, instructions: "")
-Recipe.create(id: 6, user_id: 1, name: "Chicken Salad", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Garlic Chicken", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Cashew Chicken", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Mushroom Chicken", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Turkey Spaghetti", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Turkey Tacos", portions: 4, instructions: "")
+Recipe.create(user_id: 1, name: "Chicken Salad", portions: 4, instructions: "")
 
 def add_ingredients(recipe_id, supply_ids)
     recipe = Recipe.find_by_id(recipe_id)
     supply_ids.map{|id| Consumable.find_by_id(id)} .each do |sup|
-        # ing = Ingredient.new(recipe_id: recipe_id, name: sup.name, cost_per_unit: sup.cost_per_unit, unit: sup.unit, quantity: rand(1..20))
         recipe.ingredients.build({name: sup.name, cost_per_unit: sup.cost_per_unit, unit: sup.unit, quantity: rand(1..20)}).save
     end
 end

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :ingredients
-  resources :supplies
   resources :consumables
   resources :recipes
   resources :pantries
