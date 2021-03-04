@@ -2,12 +2,11 @@ class RecipesController < ApplicationController
 
     def index
         params[:permitted] = true
-        @recipes = Recipe.find_by(user_id: params[:user_id])
-        binding.pry
+        @recipes = Recipe.where(user_id: params[:user_id])
     end
 
     def show
-        @recipe = Recipe.find_by_id(1)
+        @recipe = Recipe.find_by_id(recipe_params)
     end
 
     private

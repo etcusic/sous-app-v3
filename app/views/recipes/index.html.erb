@@ -1,0 +1,7 @@
+<h1><%= @recipes.first.user.name %></h1>
+
+<ul>
+    <% @recipes.each do |recipe| %>
+        <li><%= recipe.name %></li>
+    <% end %>
+</ul>
