@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :ingredients, dependent: :destroy
+  accepts_nested_attributes_for :ingredients
 
   def total_cost
     self.ingredients.map{ | ing | ing.quantity * ing. cost_per_unit } .reduce(&:+).round(2)

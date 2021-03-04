@@ -2,3 +2,12 @@
 
 <h2>New Recipe:</h2>
 
+<%= form_for @recipe do |form| %>  
+
+    <%# WORK ON NESTED FORM - CAN MAKE THIS BLOG POST %>
+
+    <%= form.fields_for :ingredients do |fields| %>  
+
+    <% end %>  
+
+<% end %>
