@@ -2,12 +2,62 @@
 
 <h2>New Recipe:</h2>
 
-<%= form_for @recipe do |form| %>  
+<%#= f.collection_select(:tutor_id, Tutor.all, :id, :full_name, {include_blank: true}) %><br>
+
+<%= form_with model: @recipe, local: true do |form| %>  
+
+    <%= form.label :name, "Title: " %>
+    <%= form.text_field :name %><br><br>
 
     <%# WORK ON NESTED FORM - CAN MAKE THIS BLOG POST %>
 
-    <%= form.fields_for :ingredients do |fields| %>  
+    <%= form.label :ingredients, "Ingredient: " %>
+    <%= form.collection_select :ingredients, @recipe.user.pantry.ingredients, :id, :name, {include_blank: true} %>
+    <%= form.number_field :ingredients %><br><br>
 
-    <% end %>  
+    <%= form.label :ingredients, "Ingredient: " %>
+    <%= form.collection_select :ingredients, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredients %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :ingredient, "Ingredient: " %>
+    <%= form.collection_select :ingredient, @recipe.user.pantry.ingredients, :name, :name, {include_blank: true} %>
+    <%= form.number_field :ingredient %><br><br>
+
+    <%= form.label :instructions, "Instructions: " %>
+    <%= form.text_area :instructions%><br><br>
+
+    <%= form.submit "Create New Recipe" %>
 
 <% end %>
