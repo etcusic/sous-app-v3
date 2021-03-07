@@ -7,6 +7,10 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = User.find_by_id(recipe_params[:user_id]).recipes.build
+        20.times do |i|
+            @recipe.ingredients.build
+        end
+        
     end
 
     def create
