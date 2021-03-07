@@ -1,6 +1,6 @@
 <h1><%= link_to @recipe.user.name, user_path(@recipe.user) %></h1>
 
-<h2><%= @recipe.name %> | <%= @recipe.portions %> servings | total cost: $<%= @recipe.total_cost %></h2>
+<h2><%= @recipe.name %> | <%= @recipe.servings %> servings | total cost: $<%= @recipe.total_cost %></h2>
 
 <%= @recipe.enough_in_pantry? %><br><br>
 

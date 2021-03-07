@@ -6,25 +6,33 @@ class RecipesController < ApplicationController
     end
 
     def new
-        @recipe = User.find_by_id(recipe_params[:user_id]).recipes.build
-        20.times do |i|
+        @recipe = User.find_by_id(params[:user_id]).recipes.build
+        10.times do
             @recipe.ingredients.build
         end
-        
+        # binding.pry 
     end
 
+    # need to implement find or create by for ingredient
     def create
-        binding.pry
+        new_recipe = Recipe.create(recipe_params)
+        redirect_to user_recipes_path(new_recipe.user)
     end
 
     def show
-        @recipe = Recipe.find_by_id(recipe_params[:id])
+        @recipe = Recipe.find_by_id(params[:id])
     end
 
     private
 
     def recipe_params
-        params.permit(:id, :user_id)
+        params.require(:recipe).permit(
+            :user_id,
+            :name,
+            :servings,
+            :instructions,
+            ingredients_attributes: [ :name, :quantity ]
+          )
     end
 
 end

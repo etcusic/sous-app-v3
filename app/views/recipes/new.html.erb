@@ -1,21 +1,21 @@
-<h1></h1>
+<h1><%= @recipe.user.name %></h1>
 
 <h2>New Recipe:</h2>
 
 <%= form_with model: @recipe, local: true do |form| %>  
 
     <%= form.label :name, "Title: " %>
-    <%= form.text_field :name %><br><br>
+    <%= form.text_field :name %>
 
-    <%= form.label :servings, "Title: " %>
-    <%= form.number_field :name %><br><br>
+    <%= form.label :servings, "Servings: " %>
+    <%= form.number_field :servings %><br><br>
 
-    <%# WORK ON NESTED FORM - CAN MAKE THIS BLOG POST %>
+    <%# WORK ON NESTED FORM - NEED TO SELECT FROM EXISTING INGREDIENTS %>
 
     <%= form.fields_for :ingredients do |inner_form| %>
 
         <%= inner_form.label :ingredient, "Ingredient: " %>
-        <%= inner_form.collection_select :name, @recipe.user.pantry.ingredients, :id, :name, {include_blank: true} %>
+        <%= inner_form.text_field :name %>
         <%= inner_form.number_field :quantity %><br><br>
 
     <% end %>
@@ -23,6 +23,7 @@
     <%= form.label :instructions, "Instructions: " %>
     <%= form.text_area :instructions%><br><br>
 
+    <%= form.hidden_field :user_id, value: @recipe.user_id %>
     <%= form.submit "Create New Recipe" %>
 
 <% end %>
